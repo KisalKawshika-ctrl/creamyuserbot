@@ -1,0 +1,171 @@
+{
+  "name": "Alpha UserBot",
+  "description": "A modular Telegram userbot running on Python 3.8+ with an sqlalchemy database",
+  "logo": "https://telegra.ph/file/9b45882a78c3653bd6702.png",
+  "keywords": [
+    "telegram",
+    "userbot",
+    "plugin",
+    "modular",
+    "productivity"
+  ],
+  "repository": "https://github.com/Lentera-Data/alpha-userbot",
+  "stack": "container",
+  "env": {
+    "API_KEY": {
+      "description": "Get this value from https://my.telegram.org.",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org.",
+      "required": true
+    },
+    "STRING_SESSION": {
+      "description": "Get this value by running 'python3 generate_string_session.py' in Termux or local system.",
+      "required": true
+    },
+    "HEROKU_API_KEY": {
+      "description": "Heroku API key. Get this value from https://dashboard.heroku.com/account.",
+      "value": "",
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Heroku app name. It helps with userbot updates.",
+      "value": "",
+      "required": true
+    },
+    "UPSTREAM_REPO_URL": {
+      "description": "Custom repo URL, in case you maintain a fork.",
+      "required": false
+    },
+    "UPSTREAM_REPO_BRANCH": {
+      "description": "Custom repo branch of your custom repo. Default is master",
+      "required": false
+    },
+    "COUNTRY": {
+      "description": "Country name to be used in the .time and .date commands.",
+      "required": false
+    },
+    "TZ_NUMBER": {
+      "description": "Change this value in case your country has multiple Time Zones.",
+      "value": "1",
+      "required": false
+    },
+    "CHROME_DRIVER": {
+      "description": "ChromeDriver location for selenium based modules.",
+      "value": "/usr/bin/chromedriver",
+      "required": false
+    },
+    "GOOGLE_CHROME_BIN": {
+      "description": "Google Chrome (or) Chromium binary location for selenium based modules.",
+      "value": "/usr/bin/chromium-browser",
+      "required": false
+    },
+    "OPEN_WEATHER_MAP_APPID": {
+      "description": "Weather APPID (API key). Get this value from https://api.openweathermap.org/data/2.5/weather.",
+      "required": false
+    },
+    "BOTLOG": {
+      "description": "Bot logging. Set this to True if you want.",
+      "value": "False"
+    },
+    "BOTLOG_CHATID": {
+      "description": "Chat ID of the bot log group. Set it to '0' if BOTLOG = False and LOGSPAMMER = False.",
+      "value": "0"
+    },
+    "CONSOLE_LOGGER_VERBOSE": {
+      "description": "Console log verbosity, in case you need it.",
+      "value": "False"
+    },
+    "PM_AUTO_BAN": {
+      "description": "PM Auto-Ban feature switch.",
+      "value": "False"
+    },
+    "YOUTUBE_API_KEY": {
+      "description": "YouTube API Key for .yt command. Get this value from https://console.cloud.google.com.",
+      "required": false
+    },
+    "OCR_SPACE_API_KEY": {
+      "description": "OCR API Key for .ocr command. Get this value from https://ocr.space/ocrapi.",
+      "required": false
+    },
+    "REM_BG_API_KEY": {
+      "description": "API Key for .rbg command. Get this value from https://www.remove.bg/api.",
+      "required": false
+    },
+    "ANTI_SPAMBOT": {
+      "description": "Kicks spambots from groups after they join (requires admin powers).",
+      "value": "False"
+    },
+    "ANTI_SPAMBOT_SHOUT": {
+      "description": "Report spambots to groups @admins after they join, in case you don't have admin powers to kick that shit yourself.",
+      "value": "False"
+    },
+    "TMP_DOWNLOAD_DIRECTORY": {
+      "description": "Download location for many modules (GDrive, .download, etc).",
+      "value": "./downloads/"
+    },
+    "CLEAN_WELCOME": {
+      "description": "Delete old welcome message when a new person joins.",
+      "value": "True"
+    },
+    "LASTFM_API": {
+      "description": "Last.fm API Key. Get this value from https://www.last.fm/api/account/create.",
+      "required": false
+    },
+    "LASTFM_SECRET": {
+      "description": "Last.fm SECRET Key. Get this value from https://www.last.fm/api/account/create.",
+      "required": false
+    },
+    "LASTFM_USERNAME": {
+      "description": "Last.fm username",
+      "required": false
+    },
+    "LASTFM_PASSWORD": {
+      "description": "Last.fm password",
+      "required": false
+    },
+    "BIO_PREFIX": {
+      "description": "Last.fm bio prefix.",
+      "required": false
+    },
+    "DEFAULT_BIO": {
+      "description": "Default profile bio.",
+      "value": "Online",
+      "required": false
+    },
+    "G_DRIVE_DATA": {
+      "description": "Google Drive client_secret.json.",
+      "required": false
+    },
+    "GENIUS_ACCESS_TOKEN": {
+      "description": "Client Access Token. Get this value from https://genius.com/api-clients.",
+      "required": false
+    },
+    "WEATHER_DEFCITY": {
+      "description": "Default city for the userbot's weather module.",
+      "required": false
+    },
+    "TELEGRAPH_SHORT_NAME": {
+      "description": "Short name for telegraph module",
+      "value": "0",
+      "required": true
+    },
+    "QUOTES_API_TOKEN": {
+      "description": "Quotes API. Get this value from http://antiddos.systems.",
+      "required": false
+    },
+    "LOGSPAMMER": {
+      "description": "Stored error log in the bot log group, instead of spitting out the file in the current chat. Set this to True if you want (requires valid BOTLOG_CHATID).",
+      "value": "False"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+  ]
+}
