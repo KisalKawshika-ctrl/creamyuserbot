@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Lentera-Data/alpha-userbot",
+  "repository": "https://github.com/KisalKawshika-ctrl/creamyuserbot",
   "stack": "container",
   "env": {
     "API_KEY": {
